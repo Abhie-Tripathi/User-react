@@ -23,7 +23,7 @@ const AddUser = (props) => {
     const username = usernameinputref.current.value
     const age = ageinputref.current.value
     const college = collegeinputref.current.value
-    
+
     if (username.trim().length === 0 || age.trim().length === 0) {
       seterror({
         title: "Invalid Input",
@@ -39,6 +39,9 @@ const AddUser = (props) => {
       return;
     }
     props.onadduser(username, age, college);
+    usernameinputref.current.value = ""
+    ageinputref.current.value = ""
+    collegeinputref.current.value = ""
   };
 
   return (
